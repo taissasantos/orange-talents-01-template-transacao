@@ -36,7 +36,7 @@ public class TransacaoController {
 
 	@GetMapping(value = "/api/transacao/{id}")
 	public ResponseEntity<Page<TransacaoResponse>> buscarUltimasTransacoes(@PathVariable("id") Long id,
-			@PageableDefault(size = 10, sort = "efetivadaEm", direction = DESC) Pageable pageable){
+			@PageableDefault(sort ="efetivadaEm", direction = DESC) Pageable pageable){
 
 		Cartao cartao = manager.find(Cartao.class, id);
         if (cartao == null) {

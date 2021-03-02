@@ -12,11 +12,15 @@ public class CartaoResponse {
         this.email = cartao.getEmail();
     }
 
-    public String getNumero() {
-        return "..." + numero.substring(numero.length() - 6);
-    }
+    
 
-    public String getEmail() {
+    public String getNumero() {
+		return numero;
+	}
+
+
+
+	public String getEmail() {
         return email;
     }
 

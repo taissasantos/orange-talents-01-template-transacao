@@ -13,6 +13,7 @@ public class KeycloakSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests(authorize ->
 		authorize
 		.antMatchers(HttpMethod.GET,"/api/transacao/**").hasAuthority("SCOPE_transacao:read")
+		.antMatchers(HttpMethod.GET,"/api/transacao/**").hasAuthority("SCOPE_transacao:write")
 		.anyRequest().authenticated())
 		.csrf().disable()
 		.sessionManagement()
